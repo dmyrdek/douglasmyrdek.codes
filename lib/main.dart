@@ -28,13 +28,54 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body:FlareActor(
-                    "assets/test.flr",
-                    artboard: "Comet",
-                    animation: "Blink",
-                    alignment: Alignment.center,
-                    fit: BoxFit.scaleDown,
+      body: Stack(
+        children: <Widget>[
+          SizedBox.expand(
+            child: FittedBox(
+              alignment: Alignment.center,
+              fit: BoxFit.cover,
+              child: SizedBox(
+                width: 1152,
+                height: 750,
+                child: Image(
+                  image: AssetImage(
+                    'assets/trees_bg.png',
                   ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox.expand(
+            child: FittedBox(
+              alignment: Alignment.center,
+              fit: BoxFit.contain,
+              child: SizedBox(
+                width: 1152,
+                height: 750,
+                child: FlareActor(
+                  "assets/intro.flr",
+                  animation: "Open",
+                ),
+              ),
+            ),
+          ),
+          SizedBox.expand(
+            child: FittedBox(
+              alignment: Alignment.center,
+              fit: BoxFit.cover,
+              child: SizedBox(
+                width: 1152,
+                height: 750,
+                child: Image(
+                  image: AssetImage(
+                    'assets/trees_trans.png',
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

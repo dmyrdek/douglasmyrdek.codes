@@ -42,9 +42,12 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/dmyrdek.flr
-    - assets/test.flr
-    - assets/smaller.flr
+    - assets/intro.flr
+    - assets/trees_bg.png
+    - assets/trees_trans.png
+
+
+
   
 
   # To add assets to your application, add an assets section, like this:
